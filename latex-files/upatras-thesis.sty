@@ -1,0 +1,83 @@
+\ProvidesPackage{upatras-thesis}
+
+% Remove lipsum package when you start writing your own thesis
+\usepackage{lipsum}
+% The following packages may not be complete and I will add more as I write my thesis.
+% A complete list will be provided by the end of my thesis writing.
+\usepackage{datetime}
+\usepackage{wrapfig}
+\usepackage{enumerate}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{glossaries}
+\usepackage{glossaries-polyglossia}
+\usepackage[nottoc]{tocbibind}
+\usepackage{siunitx}
+\usepackage{subcaption}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{cite}
+\usepackage{subfiles}
+\usepackage{amsmath}
+\usepackage{array,tabularx}
+\usepackage{chngcntr}
+\usepackage{afterpage}
+\usepackage{ulem}
+\usepackage{polyglossia}
+\usepackage{fontspec}
+\usepackage{hyperref}
+
+% \counterwithin{figure}{chapter}
+% \counterwithout{figure}{chapter}
+
+\setlength{\parindent}{2em}
+% \setlength{\parskip}{+0.25em}
+
+\geometry{
+	a4paper,
+	total={170mm,257mm},
+	left=20mm,
+	top=20mm
+}
+
+\setmainlanguage[variant=british]{english}
+\setotherlanguage[variant=polytonic]{greek}
+\setmainfont{Times New Roman}
+\newfontfamily\greekfont[Scale=MatchLowercase]{GFS Artemisia}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=blue,
+    urlcolor=blue,
+		citecolor=blue,
+}
+
+%*******************************%
+%					FANCY HDR							%
+%*******************************%
+\pagestyle{fancy}
+\newcommand{\creator}{github.com/tsikup}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}{}}
+% \renewcommand{\algorithmcfname}{Αλγόριθμος}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\leftmark}
+\fancyhead[LO]{\rightmark}
+\newtheorem{theorem}{Θεώρημα}[section]
+
+\newdateformat{monthyeardate}{%
+  \monthname[\THEMONTH], \THEYEAR}
+
+\graphicspath{{images/}}
+
+\newcommand{\clearemptydoublepage}{
+    \newpage{\pagestyle{empty}
+    \cleardoublepage}
+}
+
+\newenvironment{conditions}
+  {\par\vspace{\abovedisplayskip}\noindent\begin{tabular}{>{$}l<{$} @{${}={}$} l}}
+  {\end{tabular}\par\vspace{\belowdisplayskip}}

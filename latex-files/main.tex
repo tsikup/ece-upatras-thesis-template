@@ -1,0 +1,129 @@
+\documentclass[a4paper,12pt,twoside]{book}
+\usepackage{upatras-thesis}
+
+% PDF settings
+%
+% \hypersetup
+% {
+%     pdfauthor={\me},
+%     pdftitle={\shortdoctitle},
+%     pdfsubject={\doctitle},
+%     pdfkeywords={\keywords},
+%     pdfproducer={pdfLaTeX},
+%     pdfcreator={\creator}
+% }
+
+%
+% These commands need to be defined in order to produce a correct and personalized document
+%
+\newcommand{\shortdoctitle}{Διπλωματική Εργασία}
+\newcommand{\doctitle}{Τίτλος Διπλωματικής Εργασίας}
+\newcommand{\docsubtitle}{Υπότιτλος εγγράφου}
+\newcommand{\division}{Τομέας Εκπόνησης Διπλωματικής Εργασίας}
+\newcommand{\lab}{Εργαστήριο Εκπόνησης Διπλωματικής Εργασίας}
+
+\newcommand{\me}{Όνομα Φοιτητή Πατρώνυμο} %(σε γενική πτώση) ΠΡΟΣΟΧΗ: στοιχεία σε γενική πτώση. Παράδειγμα: Άγγελου Σικελιανού του Ιωάννη
+%
+\newcommand{\nomme}{Όνομα Φοιτητή Πατρώνυμο} %(σε ονομαστική πτώση) ΠΡΟΣΟΧΗ: στοιχεία σε ονομαστική πτώση. Παράδειγμα: Άγγελος Σικελιανός του Ιωάννη
+%
+\newcommand{\studnum}{Αριθμός Μητρώου}
+\newcommand{\keywords}{Λέξεις Κλειδιά}
+\newcommand{\monthyear}{Μήνας 201X}
+
+\newcommand{\supname}{Επιβλέποντας Καθηγητής}
+\newcommand{\suptitle}{Τίτλος Επιβλέποντα Καθηγητή}
+\newcommand{\supuni}{Πανεπιστήμιο Επιβλέπωντα}
+
+\newcommand{\cosupname}{Συνεπιβλέποντας Καθηγητής}
+\newcommand{\cosuptitle}{Τίτλος Συνεπιβλέποντα Καθηγητή}
+\newcommand{\cosupuni}{Πανεπιστήμιο Συνεπιβλέποντα}
+
+\newcommand{\headofdivision}{Ονοματεπώνυμο Διεθυντή Τομέα}
+\newcommand{\headofdivisiontitle}{Τίτλος Διευθυντή Τομέα}
+
+\author{\me}
+
+% GLOSSARY
+\makeglossaries
+\input{library/glossary}
+
+% BEGIN DOCUMENT
+\begin{document}
+
+% SET PAGE NUMBERING TO ROMAN
+\pagenumbering{roman}
+\setcounter{page}{3}
+
+%*************************%
+%         TITLES          %
+%*************************%
+
+\include{intro/titlepage}
+\clearemptydoublepage
+
+\include{intro/certification}
+\clearemptydoublepage
+
+\include{intro/about}
+\clearemptydoublepage
+
+\include{intro/summary}
+\clearemptydoublepage
+
+\include{intro/acknowledgements}
+\clearemptydoublepage
+
+\pagestyle{empty}
+
+{\hypersetup{linkcolor=black}
+\tableofcontents
+}
+\clearemptydoublepage
+
+%*************************%
+%    1. Lists of figures  %
+%    2. List of Tables    %
+%    3. Glossary          %
+%*************************%
+\listoffigures
+\listoftables
+\printglossaries
+\clearemptydoublepage
+
+\mainmatter % book mode only
+\clearemptydoublepage
+
+
+\pagestyle{fancy}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+%*************************%
+%       Main Chapters     %
+%*************************%
+
+% Introduction
+\input{chapters/introduction}
+\clearemptydoublepage
+
+% Chapter 1
+\chapter{Chapter 1}\label{ch:chap1}
+\input{chapters/chapter_1}
+\clearemptydoublepage
+
+% Next Chapters
+% .............
+% .............
+
+%**************************%
+%    END OF MAIN THESIS    %
+%**************************%
+
+% bibliography
+\bibliographystyle{unsrt}
+\bibliography{library/bibliography.bib}
+\clearemptydoublepage
+
+% Last Page
+\input{intro/lastpage}
+\end{document}
